@@ -8,3 +8,7 @@ class People(models.Model):
     
     def __str__(self):              # __unicode__ on Python 2
         return self.first_name +" "+ self.last_name
+    
+    class Meta(object):
+        unique_together = (("first_name", "last_name"),)
+    

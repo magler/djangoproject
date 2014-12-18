@@ -12,4 +12,3 @@ def index(response):
 def query_name(response, name):
     person = People.objects.get(first_name=name)
     return JsonResponse(model_to_dict(person))
-    #return HttpResponse("name is %s" % person.last_name)

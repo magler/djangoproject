@@ -10,5 +10,5 @@ def index(response):
     return HttpResponse("Please enter a /getdbinfo/name")
 
 def query_name(response, name):
-    person = People.objects.get(first_name=name)
+    person = People.objects.get(first_name__iexact=name)
     return JsonResponse(model_to_dict(person))
